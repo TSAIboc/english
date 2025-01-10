@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>English Media Player</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Poppins:wght@400;500;600;700&display=swap');
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', 'Noto Sans TC', sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #e4e9f2 100%);
+      color: #2d3748;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      color: #2d3748;
+      border-bottom: 3px solid #4299e1;
+      padding-bottom: 15px;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      color: #2d3748;
+      margin: 40px 0 20px;
+      padding: 10px 20px;
+      background: #ebf8ff;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+    }
+
+    h2::before {
+      content: "📝";
+      margin-right: 10px;
+    }
+
+    p {
+      margin: 15px 0;
+      line-height: 1.8;
+    }
+
+    .content-block {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      margin: 15px 0;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .media {
+      background: #9a9794;
+      padding: 20px;
+      border-radius: 15px;
+      margin: 25px 0;
+    }
+
+    video, audio {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .vocabulary-item, .sentence-item {
+      background: #fff;
+      padding: 20px;
+      margin: 15px 0;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      border-left: 5px solid #4299e1;
+      transition: transform 0.2s ease;
+    }
+
+    .vocabulary-item:hover, .sentence-item:hover {
+      transform: translateX(10px);
+    }
+
+    .vocabulary-item span:first-child {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #2d3748;
+    }
+
+    .phonetic {
+      color: #e53e3e;
+      font-weight: bold;
+      margin: 0 10px;
+    }
+
+    .example {
+      margin: 10px 0;
+      padding-left: 20px;
+      border-left: 3px solid #48bb78;
+    }
+
+    .highlighted-word {
+      color: #48bb78;
+      font-weight: bold;
+    }
+
+    .sentence {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+
+    .translation {
+      color: #718096;
+      font-style: italic;
+      margin-bottom: 15px;
+    }
+
+    .audio-control {
+      background: #f7fafc;
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+    audio {
+      height: 40px;
+    }
+
+    .note {
+      background: #ebf8ff;
+      padding: 20px;
+      border-radius: 12px;
+      margin-top: 30px;
+      border-left: 5px solid #4299e1;
+      font-size: 0.95rem;
+    }
+
+    .pattern-title {
+      font-size: 1.1rem;
+      color: #4a5568;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    ul {
+      list-style-type: none;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .container {
+        margin: 20px;
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎧 羅伯特F甘迺迪提議或引發美國飲⽤⽔政策變⾰</h1>
+    
+    <h2>Step 1: 盲聽練習</h2>
+    <p>請先不看文字內容，專注聆聽音檔，嘗試理解主要內容。</p>
+    
+    <div class="media">
+      <audio controls>
+        <source src="https://www.dropbox.com/scl/fi/j759f093c8m7yxt2h5yo5/F.mp3?rlkey=n5r0abeggalpxa391eqkfhw15&dl=1" type="audio/mp3">
+        Your browser does not support the video tag.
+      </audio>
+    </div>
+
+    <h2>Step 2: 英文轉寫</h2>
+    <div class="content-block">
+      <p>Online about possible changes proposed by nominees for President-elect Trump's cabinet. One of those changes will be to tap water. Sherald Mercedes explains why the proposal is already causing some backlash.</p>
+      <p>Why has the nomination of Robert F. Kennedy Jr. as the head of Health and Human Services sparked a new debate about fluoride in drinking water? RFK Jr has said he will advise local water systems to remove fluoride from public drinking water.</p>
+      <p>According to the Centers for Disease Control, close to 63% of Americans have fluoridated water coming out of their taps. Local municipalities make the decision whether or not to add fluoride to the water supply. The US Environmental Protection Agency only mandates a limit on how much can be put in.</p>
+      <p>So what is fluoride? It is a naturally occurring mineral that is already found in some water supplies. That's actually how we discovered it helped teeth. Dentists noticed that people living in areas with fluoride in the water had less tooth decay and better enamel. In 1945, Grand Rapids, Michigan became the first city in the world to add fluoride to its water supply.</p>
+      <p>Research shows the rate of cavities in children there decreased by more than 60%. The debate over fluoride stems from what happens when there is too much in the water. A recent scientific paper found a possible link between high fluoride levels and lower IQs in children, but those fluoride levels were double what is recommended by the EPA. Experts say more research is needed and warn that facts, not conspiracy theories, should inform that debate.</p>
+    </div>
+
+    <h2>Step 3: 中文翻譯</h2>
+    <div class="content-block">
+      <p>關於川普當選總統的內閣提名人提出的可能變化的線上討論。其中一項改變關乎自來水。謝拉爾德·梅賽德斯解釋了為何這一提議已經引發了一些反對的聲音。</p>
+      <p>為何羅伯特·F·甘迺迪（小）被提名為衛生與公共服務部部長人選會引發了一場關於飲用水中氟化物的新辯論？小甘迺迪表示，他將建議地方供水系統去除公共飲用水中的氟化物。</p>
+      <p>據美國疾病管制與預防中心稱，近63%的美國人使用的自來水是加過氟的。地方市政當局決定是否要在供水系統中添加氟化物。美國環保署僅對添加量的上限作出規定。</p>
+      <p>那麼，氟化物是什麼呢？它是一種自然產生的礦物質，已存在於一些供水系統中。這其實是我們發現它對牙齒有益的方式。牙醫注意到，生活在水中含有氟化物地區的人蛀牙較少，牙釉質較好。1945年，密西根州的大急流城成為世界上第一個在供水系統中添加氟化物的城市。研究顯示，當地兒童的蛀牙率下降了60%以上。</p>
+      <p>關於氟化物的爭論源自於水中氟化物含量過高會造成什麼影響。最近的一篇科學論文發現，氟化物水平過高可能與兒童智商較低有關，但這些氟化物水平是環保署建議水平的兩倍。專家表示，需要進行更多研究，並警告說，應該用事實而非陰謀論來指導這場辯論。</p>
+    </div>
+
+    <h2>Step 4: 逐句精聽</h2>
+    <div class="sentence-item">
+      <div class="sentence">Thing online about possible changes proposed by nominees for President-elect Trump's cabinet.</div>
+      <div class="translation">有關川普當選總統的內閣提名人提出的可能變化的線上討論。</div>
+      <div class="audio-control">
+        <audio controls>
+          <source src="https://www.dropbox.com/scl/fi/gux29sx4br6f7g1hiws7g/001_thing-online-about-possible-changes-proposed-by-no.mp3?rlkey=n5ra9hcp3fu5v7wjv7v4cwr2g&dl=1" type="audio/mp3">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+    </div>
+
+    <div class="sentence-item">
+      <div class="sentence">One of those changes will be to tap water.</div>
+      <div class="translation">其中一項改變關乎自來水。</div>
+      <div class="audio-control">
+        <audio controls>
+          <source src="https://www.dropbox.com/scl/fi/ky8xbv6l6izd59ea194d3/002_One-of-those-changes-will-be-to-tap-water.mp3?rlkey=7cweaznfo06159gdmf1dp27uh&dl=1" type="audio/mp3">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+    </div>
+
+    <div class="sentence-item">
+      <div class="sentence">Sheryl Mercedes explains why the proposal is already causing some backlash.</div>
+      <div class="translation">謝拉爾德·梅賽德斯解釋了為何這一提議已經引發了一些反對的聲音。</div>
+      <div class="audio-control">
+        <audio controls>
+          <source src="https://www.dropbox.com/scl/fi/vn0njpprs2bg78ndh6vlm/003_Sheryl-Mercedes-explains-why-the-proposal-is-alrea.mp3?rlkey=nlmg04lshla8ol00zqcv9o5ne&dl=1" type="audio/mp3">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+    </div>
+
+    <div class="sentence-item">
+      <div class="sentence">Why has the nomination of Robert Kennedy Jr as the head of Health and Human Services sparked a new debate about fluoride in drinking water?</div>
+      <div class="translation">為何羅伯特·F·甘迺迪（小）被提名為衛生與公共服務部部長人選會引發了一場關於飲用水中氟化物的新辯論？</div>
+      <div class="audio-control">
+        <audio controls>
+          <source src="https://www.dropbox.com/scl/fi/9i2rimtl72d0r30s7w9jr/004_Why-has-the-nomination-of-Robert-Kennedy-Jr-as-the.mp3?rlkey=faa2slb3uejkxtyv9wiqy85vo&dl=1" type="audio/mp3">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+    </div>
+
+    <div class="sentence-item">
+      <div class="sentence">RFK Jr has said he will advise local water systems to remove fluoride from public drinking water.</div>
+      <div class="translation">小甘迺迪表示，他將建議地方供水系統去除公共飲用水中的氟化物。</div>
+      <div class="audio-control">
+        <audio controls>
+          <source src="https://www.dropbox.com/scl/fi/wedycuxemfrhmz7rvdufa/005_RFK-Jr-has-said-he-will-advise-local-water-systems.mp3?rlkey=rl2y85oxthz1xth2ks088icjh&dl=1" type="audio/mp3">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+    </div>
+
+    <div class="sentence-item">
+      <div class="sentence">According to the Centers for Disease Control, close to 63 percent of Americans have fluoridated water coming out of their taps.</div>
+      <div class="translation">據美國疾病管制與預防中心稱，近63%的美國人使用的自來水是加過氟的。</div>
+      <div class="audio-control">
+        <audio controls>
+          <source src="https://www.dropbox.com/scl/fi/mfaaxyqic1yvikzl1st87/006_According-to-the-centers-for-Disease-Control-close.mp3?rlkey=7qv7hhnur7rih9da98mju4f98&dl=1" type="audio/mp3">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+    </div>
+
+    <div class="sentence-item">
+      <div class="sentence">Local municipalities make the decision whether or not to add fluoride to the water supply.</div>
+      <div class="translation">地方市政當局決定是否要在供水系統中添加氟化物。</div>
+      <div class="audio-control">
+        <audio controls>
+          <source src="https://www.dropbox.com/scl/fi/zekv4onqao1s27t3v2afo/007_Local-municipalities-make-the-decision-whether-or.mp3?rlkey=eua9uce2pdp91l37no8ob18fr&dl=1" type="audio/mp3">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+    </div>
+
+    <div class="sentence-item">
+      <div class="sentence">The US Environmental Protection Agency only mandates a limit on how much can be put in.</div>
+      <div class="translation">美國環保署僅對添加量的上限作出規定。</div>
+      <div class="audio-control">
+        <audio controls>
+          <source src="https://www.dropbox.com/scl/fi/ulody7rl1dir2qkubp2nr/008_The-US-Environmental-Protection-Agency-only-mandat.mp3?rlkey=eb2tjxzt679kll35h6lr39kbo&dl=1" type="audio/mp3">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+    </div>
+
+    <div class="sentence-item">
+      <div class="sentence">So what is fluoride? It is a naturally occurring mineral that is already found in some water supplies.</div>
+      <div class="translation">那麼，氟化物是什麼呢？它是一種自然產生的礦物質，已存在於一些供水系統中。</div>
+      <div class="audio-control">
+        <audio controls>
+          <source src="https://www.dropbox.com/scl/fi/g2r3mhn88au40u87bi078/009_So-what-is-fluoride-It-is-a-naturally-occurring-mi.mp3?rlkey=hsl1cbujtlz55691ypmld5g8n&dl=1" type="audio/mp3">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+    </div>
+
+    <div class="sentence-item">
+      <div class="sentence">That's actually how we discovered it helped teeth.</div>
+      <div class="translation">這其實是我們發現它對牙齒有益的方式。</div>
+      <div class="audio-control">
+        <audio controls>
+          <source src="https://www.dropbox.com/scl/fi/zpglz6a51k0to3tazjoaa/010_That_s-actually-how-we-discovered-it-helped-teeth.mp3?rlkey=rkrf20dek23z3sple3khhzxms&dl=1" type="audio/mp3">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+    </div>
+
+    <div class="sentence-item">
+      <div class="sentence">Dentists noticed that people living in areas with fluoride in the water had less tooth decay and better enamel.</div>
+      <div class="translation">牙醫注意到，生活在水中含有氟化物地區的人蛀牙較少，牙釉質較好。</div>
+      <div class="audio-control">
+        <audio controls>
+          <source src="https://www.dropbox.com/scl/fi/6nnn99dtgm3kcvdbdjkg0/011_Dentists-noticed-that-people-living-in-areas-with.mp3?rlkey=hiid7rqdtuadedodtohyr1u4u&dl=1" type="audio/mp3">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+    </div>
+
+    <div class="sentence-item">
+      <div class="sentence">In 1945, Grand Rapids, Michigan became the first city in the world to add fluoride to its water supply.</div>
+      <div class="translation">1945年，密歇根州的大急流城成為世界上第一個在供水系統中添加氟化物的城市。</div>
+      <div class="audio-control">
+        <audio controls>
+          <source src="https://www.dropbox.com/scl/fi/9otmxakzw3rnd3zc5eew4/012_In-1945-Grand-Rapids-Michigan-became-the-first-c.mp3?rlkey=jzmw0njlnhkr7ont1fd2rjssr&dl=1" type="audio/mp3">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+    </div>
+
+    <div class="sentence-item">
+      <div class="sentence">Research shows the rate of cavities and children there decreased by more than 60 percent.</div>
+      <div class="translation">研究顯示，當地兒童的蛀牙率下降了超過60%。</div>
+      <div class="audio-control">
+        <audio controls>
+          <source src="https://www.dropbox.com/scl/fi/ozgw67x7qgy3002v607rj/013_Research-shows-the-rate-of-cavities-and-children-t.mp3?rlkey=qlm4mb5b7u6e3rp0aqfcdxzhz&dl=1" type="audio/mp3">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+    </div>
+
+    <div class="sentence-item">
+      <div class="sentence">The debate over fluoride stems from what happens when there is too much in the water.</div>
+      <div class="translation">關於氟化物的爭論來自於過多的氟化物出現在水中時會發生什麼。</div>
+      <div class="audio-control">
+        <audio controls>
+          <source src="https://www.dropbox.com/scl/fi/vngk4a7dzoiu12iy29df2/014_The-debate-over-fluoride-stems-from-what-happens-w.mp3?rlkey=xmn0c3o5xg53359pd2az08qa0&dl=1" type="audio/mp3">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+    </div>
+
+    <div class="sentence-item">
+      <div class="sentence">A recent scientific paper found a possible link between high fluoride levels and lower IQs in children.</div>
+      <div class="translation">最近的一篇科學論文發現，高氟化物水平可能與兒童較低的智商相關。</div>
+      <div class="audio-control">
+        <audio controls>
+          <source src="https://www.dropbox.com/scl/fi/srdcfdgvurvjhmunhnloj/015_A-recent-scientific-paper-found-a-possible-link-be.mp3?rlkey=a5mxqiiky7rcjrol2690q9vst&dl=1" type="audio/mp3">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+    </div>
+
+    <div class="sentence-item">
+      <div class="sentence">But those fluoride levels were double what is recommended by the ETA.</div>
+      <div class="translation">但這些氟化物水平是環保署推薦標準的兩倍。</div>
+      <div class="audio-control">
+        <audio controls>
+          <source src="https://www.dropbox.com/scl/fi/em0cylbbq8txcwc27ppr6/016_but-those-fluoride-levels-were-double-what-is-reco.mp3?rlkey=l2lybbanxranispa8ofu18203&dl=1" type="audio/mp3">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+    </div>
+
+    <div class="sentence-item">
+      <div class="sentence">Exports say more research is needed and warned that facts, not conspiracy theories should inform that debate.</div>
+      <div class="translation">專家表示需要更多研究，並警告應用事實而非陰謀論來指導這場辯論。</div>
+      <div class="audio-control">
+        <audio controls>
+          <source src="https://www.dropbox.com/scl/fi/jyffswqldyvjy77lhbvb2/017_Exports-say-more-research-is-needed-and-warned-tha.mp3?rlkey=9p8j2ublfnhobjhy0vl10ec3p&dl=1" type="audio/mp3">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+    </div>
+
+    <div class="sentence-item">
+      <div class="sentence">with the Y I'm Sheryl Mercedes.</div>
+      <div class="translation">我是謝拉爾德·梅賽德斯，為您報導。</div>
+      <div class="audio-control">
+        <audio controls>
+          <source src="https://www.dropbox.com/scl/fi/99w6fx1ryl1bal6oq095r/018_with-the-Y-I_m-Sheryl-Mercedes.mp3?rlkey=lyq66oot5a7ubqfublk15nmst&dl=1" type="audio/mp3">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+    </div>
+
+    <h2>Step 5: 擴展學習建議</h2>
+    <div class="content-block">
+      <p>🎯 <strong>短期目標</strong></p>
+      <ul>
+        <li>每天練習 2-3 個句子的精聽與跟讀</li>
+        <li>記憶並活用本課中的 3-5 個新單字</li>
+        <li>用學到的句型造句 2-3 個</li>
+      </ul>
+
+      <p>📚 <strong>延伸學習</strong></p>
+      <ul>
+        <li>尋找相關的新聞報導，擴展詞彙量</li>
+        <li>觀看相關的英文視頻，提升聽力理解</li>
+        <li>練習用相似主題進行口語表達</li>
+      </ul>
+
+      <p>✍️ <strong>練習建議</strong></p>
+      <ul>
+        <li>使用間隔重複法複習單字和句型</li>
+        <li>建立個人單字本，記錄相關詞組</li>
+        <li>錄下自己的跟讀音頻，對比提升發音</li>
+      </ul>
+    </div>
+
+  </div>
+</body>
+</html>
